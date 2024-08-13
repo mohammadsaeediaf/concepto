@@ -1,0 +1,221 @@
+@font-face {
+  font-family: "iransans-reg";
+  src: url(../fonts/IRANSansXRegular.ttf);
+}
+@font-face {
+  font-family: "iransans-med";
+  src: url(../fonts/IRANSansXMedium.ttf);
+}
+@font-face {
+  font-family: "iransans-bold";
+  src: url(../fonts/IRANSansXBold.ttf);
+}
+@font-face {
+  font-family: "iransans-black";
+  src: url(../fonts/IRANSansXBlack.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "iransans-reg";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: #f8f8f8;
+  direction: rtl;
+  font-family: "iransans-reg";
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  width: 100%;
+  padding: 1rem 3rem;
+}
+header nav {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 30%;
+}
+header nav .nav-logo {
+  margin-bottom: -0.5rem;
+  height: 10%;
+}
+header nav .serach {
+  position: relative;
+}
+header nav .serach input {
+  padding: 0.8rem 2.7rem;
+  border-radius: 0.7rem;
+  margin-right: 1.5rem;
+  outline: none;
+  border: none;
+  background: #e9eaee;
+  position: relative;
+  font-family: "iransans-reg";
+}
+header nav .serach .serach-icon {
+  position: absolute;
+  top: 0.8rem;
+  right: 15.3rem;
+}
+header nav .serach .search-content {
+  display: flex;
+  position: relative;
+}
+header nav .serach .search-btn {
+  width: 100%;
+}
+header nav .search-btn::before {
+  content: url(../images/nav/search.png);
+  position: absolute;
+  right: 29%;
+  top: 30%;
+  z-index: 10;
+}
+header nav .buttons {
+  display: flex;
+}
+header nav .buttons button {
+  display: flex;
+  padding: 0.6rem 1rem;
+  background-color: #438efd;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-family: "iransans-reg";
+  cursor: pointer;
+}
+header nav .buttons button img {
+  margin-bottom: -0.3rem;
+  margin-left: 0.3rem;
+}
+header nav .buttons .login-btn {
+  background: transparent;
+  border: 1px solid #0f0f0f;
+  color: #2e303b;
+}
+header .links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  font-family: "iransans-bold";
+  font-size: 0.9rem;
+}
+header .links a {
+  color: #2e303b;
+}
+
+main .hero {
+  text-align: center;
+  padding-top: 5rem;
+  width: 100%;
+}
+main .hero .hero-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .hero .hero-caption h1 {
+  font-family: "iransans-bold";
+  font-size: 3.5rem;
+  color: #00183b;
+}
+main .hero .hero-caption p {
+  color: #013075;
+}
+main .hero .hero-caption .buttons button {
+  padding: 0.8rem 2rem;
+  background-color: #438efd;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  font-family: "iransans-reg";
+  cursor: pointer;
+}
+main .hero .hero-caption .buttons button img {
+  margin-bottom: -0.2rem;
+  margin-left: 0.5rem;
+}
+main .hero .hero-caption .buttons .about-btn {
+  background: transparent;
+  border: 1px solid #0f0f0f;
+  color: #2e303b;
+}
+main .hero .hero-caption .buttons .about-btn img {
+  margin-right: 0.7rem;
+}
+main .hero .hero-preview {
+  margin-top: 3rem;
+  position: relative;
+  margin-bottom: 15rem;
+}
+main .hero .hero-preview img {
+  width: 100%;
+}
+main .hero .hero-preview .preview-sm {
+  position: absolute;
+  right: 0;
+  top: -15%;
+}
+main .hero .hero-preview .preview-landscape {
+  position: absolute;
+  left: -7%;
+  bottom: -27%;
+}
+main .information {
+  margin: 10rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .information .info-item {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  width: 33%;
+}
+main .information .info-item .circle {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #ffecb3;
+}
+main .information .info-item .num {
+  font-family: "iransans-med";
+  font-size: 2rem;
+}
+main .information .info-item .info {
+  font-family: "iransans-bold";
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 20%;
+  right: 14%;
+  width: 15rem;
+}/*# sourceMappingURL=style.css.map */
