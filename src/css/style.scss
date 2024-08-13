@@ -1,0 +1,283 @@
+$neutral: #e9eaee;
+$white: #fff;
+$black: #0f0f0f;
+$neutral-gray-8: #2e303b;
+
+// primary color
+$primary: #438efd;
+$primary-tint-5: #438efd;
+$primary-tint-3: #aecffe;
+$primary-tint-1: #e4efff;
+$primary-shade-2: #013075;
+$primary-shade-5: #013075;
+$primary-shade-7: #00183b;
+
+// secondary color
+$secondary: #ffd24d;
+$secondary-tint-3: #ffecb3;
+
+// font
+
+@font-face {
+  font-family: "iransans-reg";
+  src: url(../fonts/IRANSansXRegular.ttf);
+}
+
+@font-face {
+  font-family: "iransans-med";
+  src: url(../fonts/IRANSansXMedium.ttf);
+}
+
+@font-face {
+  font-family: "iransans-bold";
+  src: url(../fonts/IRANSansXBold.ttf);
+}
+
+@font-face {
+  font-family: "iransans-black";
+  src: url(../fonts/IRANSansXBlack.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "iransans-reg";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background: #f8f8f8;
+  direction: rtl;
+  font-family: "iransans-reg";
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// Header styles
+header {
+  width: 100%;
+  padding: 1rem 3rem;
+
+  nav {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 30%;
+
+    .nav-logo {
+      margin-bottom: -0.5rem;
+      height: 10%;
+    }
+
+    .serach {
+      position: relative;
+
+      input {
+        padding: 0.8rem 2.7rem;
+        border-radius: 0.7rem;
+        margin-right: 1.5rem;
+        outline: none;
+        border: none;
+        background: $neutral;
+        position: relative;
+        font-family: "iransans-reg";
+      }
+
+      .serach-icon {
+        position: absolute;
+        top: 0.8rem;
+        right: 15.3rem;
+      }
+
+      .search-content {
+        display: flex;
+        position: relative;
+      }
+
+      .search-btn {
+        width: 100%;
+      }
+    }
+
+    .search-btn::before {
+      content: url(../images/nav/search.png);
+      position: absolute;
+      right: 29%;
+      top: 30%;
+      z-index: 10;
+    }
+
+    .buttons {
+      display: flex;
+      button {
+        display: flex;
+        padding: 0.6rem 1rem;
+        background-color: $primary;
+        color: $white;
+        border: none;
+        outline: none;
+        border-radius: 0.8rem;
+        font-size: 1rem;
+        margin: 0.5rem;
+        font-size: 1rem;
+        font-family: "iransans-reg";
+        cursor: pointer;
+
+        img {
+          margin-bottom: -0.3rem;
+          margin-left: 0.3rem;
+        }
+      }
+
+      .login-btn {
+        background: transparent;
+        border: 1px solid $black;
+        color: $neutral-gray-8;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    font-family: "iransans-bold";
+    font-size: 0.9rem;
+
+    a {
+      color: $neutral-gray-8;
+    }
+  }
+}
+
+// main style
+
+main {
+  .hero {
+    text-align: center;
+    padding-top: 5rem;
+    width: 100%;
+
+    .hero-caption {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h1 {
+        font-family: "iransans-bold";
+        font-size: 3.5rem;
+        color: $primary-shade-7;
+      }
+
+      p {
+        color: $primary-shade-5;
+      }
+
+      .buttons {
+        button {
+          padding: 0.8rem 2rem;
+          background-color: $primary;
+          color: $white;
+          border: none;
+          outline: none;
+          border-radius: 0.8rem;
+          font-size: 1rem;
+          margin: 0.5rem;
+          font-size: 1rem;
+          font-family: "iransans-reg";
+          cursor: pointer;
+
+          img {
+            margin-bottom: -0.2rem;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .about-btn {
+          background: transparent;
+          border: 1px solid $black;
+          color: $neutral-gray-8;
+
+          img {
+            margin-right: 0.7rem;
+          }
+        }
+      }
+    }
+
+    // hero preview
+    .hero-preview {
+      margin-top: 3rem;
+      position: relative;
+      margin-bottom: 15rem;
+      img {
+        width: 100%;
+      }
+
+      .preview-sm {
+        position: absolute;
+        right: 0;
+        top: -15%;
+      }
+
+      .preview-landscape {
+        position: absolute;
+        left: -7%;
+        bottom: -27%;
+      }
+    }
+  }
+
+  // information section
+
+  .information {
+    margin: 10rem 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      position: relative;
+      width: 33%;
+
+      .circle {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background: $secondary-tint-3;
+      }
+
+      .num {
+        font-family: "iransans-med";
+        font-size: 2rem;
+      }
+
+      .info {
+        font-family: "iransans-bold";
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: 20%;
+        right: 14%;
+        width: 15rem;
+      }
+    }
+  }
+}
