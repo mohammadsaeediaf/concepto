@@ -72,24 +72,10 @@ main .hero .hero-caption {
 }
 main .hero .hero-caption h1 {
   font-family: "iransans-bold";
-  font-size: 3.5rem;
   color: #00183b;
 }
 main .hero .hero-caption p {
   color: #013075;
-}
-main .hero .hero-caption .buttons button {
-  padding: 0.8rem 2rem;
-  background-color: #438efd;
-  color: #fff;
-  border: none;
-  outline: none;
-  border-radius: 0.8rem;
-  font-size: 1rem;
-  margin: 0.5rem;
-  font-size: 1rem;
-  font-family: "iransans-reg";
-  cursor: pointer;
 }
 main .hero .hero-caption .buttons button img {
   margin-bottom: -0.2rem;
@@ -109,12 +95,7 @@ main .hero .hero-preview {
   margin-bottom: 15rem;
 }
 main .hero .hero-preview img {
-  width: 100%;
-}
-main .hero .hero-preview .preview-sm {
-  position: absolute;
-  right: 0;
-  top: -15%;
+  width: 70%;
 }
 main .hero .hero-preview .preview-landscape {
   position: absolute;
@@ -122,35 +103,41 @@ main .hero .hero-preview .preview-landscape {
   bottom: -27%;
 }
 main .information {
-  margin: 10rem 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 4rem 0;
+  margin-bottom: 10rem;
 }
-main .information .info-item {
-  display: flex;
-  gap: 1rem;
+main .information .info {
   position: relative;
-  width: 33%;
-}
-main .information .info-item .circle {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  background: #ffecb3;
-}
-main .information .info-item .num {
-  font-family: "iransans-med";
-  font-size: 2rem;
-}
-main .information .info-item .info {
-  font-family: "iransans-bold";
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-right: 2rem;
+}
+main .information .info::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background: #ffecb3;
+  border-radius: 50%;
   position: absolute;
-  top: 20%;
-  right: 14%;
-  width: 15rem;
+  z-index: -1;
+}
+main .information .info-num {
+  margin-right: 3rem;
+  font-family: "iransans-med";
+  font-size: 2rem;
+}
+main .information .info-caption {
+  font-family: "iransans-bold";
+}
+main .business {
+  display: grid;
+  text-align: center;
+  margin: 5rem 0;
+}
+main .business .business-card {
+  width: 100%;
 }
 
 /* resposive design */
@@ -227,7 +214,7 @@ main .information .info-item .info {
     padding: 1rem 3rem;
     border-radius: 0.5rem;
   }
-  .nav-search-md::before {
+  .nav-search-md .nav-search-md::before {
     content: url(../images/nav/search.png);
     position: absolute;
     top: 30%;
@@ -236,6 +223,29 @@ main .information .info-item .info {
   .nav-links {
     display: none;
   }
+  main .hero .hero-caption h1 {
+    font-size: 1.5rem;
+  }
+  main .hero .hero-caption .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  main .hero .hero-caption .buttons button {
+    display: flex;
+    align-items: center;
+    background-color: #438efd;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .hero .preview-about {
+    padding: 0 2rem;
+  }
+  .preview,
   .preview-sm,
   .preview-landscape {
     display: none;
@@ -251,12 +261,6 @@ main .information .info-item .info {
   .container {
     width: 750px;
   }
-  nav {
-    grid-template-columns: 1fr 40%;
-  }
-  nav .nav-buttons button {
-    font-size: 0.7rem;
-  }
   .nav-links {
     display: flex;
     margin-top: 0.5rem;
@@ -267,6 +271,12 @@ main .information .info-item .info {
   }
   .nav-search-md {
     display: none;
+  }
+  nav {
+    grid-template-columns: 1fr 40%;
+  }
+  nav .nav-buttons button {
+    font-size: 0.7rem;
   }
   nav .nav-logo .hamburger-icon {
     display: none;
@@ -312,9 +322,24 @@ main .information .info-item .info {
   nav .nav-buttons button {
     width: 35%;
   }
-  .preview-sm,
-  .preview-landscape {
+  main .preview-sm {
     display: block;
+    position: absolute;
+    right: 0;
+    top: -15%;
+  }
+  main .preview-about {
+    display: none;
+  }
+  main .preview,
+  main .preview-landscape {
+    display: block;
+  }
+  main .hero .preview-about img {
+    width: 70%;
+  }
+  main .information {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1200px) {
