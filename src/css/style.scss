@@ -1,6 +1,12 @@
-$neutral: #e9eaee;
 $white: #fff;
 $black: #0f0f0f;
+
+// neutral color
+
+$neutral: #e9eaee;
+$neutral-gray-1: #e9eaee;
+$neutral-gray-3: #aeb2c0;
+$neutral-gray-5: #737993;
 $neutral-gray-8: #2e303b;
 
 // primary color
@@ -42,9 +48,6 @@ $secondary-tint-3: #ffecb3;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
   font-family: "iransans-reg";
 }
 
@@ -70,100 +73,25 @@ body {
 }
 
 // Header styles
-header {
-  width: 100%;
-  padding: 1rem 3rem;
 
-  nav {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 30%;
-
-    .nav-logo {
-      margin-bottom: -0.5rem;
-      height: 10%;
-    }
-
-    .serach {
-      position: relative;
-
-      input {
-        padding: 0.8rem 2.7rem;
-        border-radius: 0.7rem;
-        margin-right: 1.5rem;
-        outline: none;
-        border: none;
-        background: $neutral;
-        position: relative;
-        font-family: "iransans-reg";
-      }
-
-      .serach-icon {
-        position: absolute;
-        top: 0.8rem;
-        right: 15.3rem;
-      }
-
-
-      
-      .search-content {
-        display: flex;
-        position: relative;
-      }
-
-      .search-btn {
-        width: 100%;
-      }
-    }
-
-    .search-btn::before {
-      content: url(../images/nav/search.png);
-      position: absolute;
-      right: 29%;
-      top: 30%;
-      z-index: 10;
-    }
-
-    .buttons {
+nav {
+  padding: 1rem 0;
+  .nav-buttons {
+    button {
       display: flex;
-      button {
-        display: flex;
-        padding: 0.6rem 1rem;
-        background-color: $primary;
-        color: $white;
-        border: none;
-        outline: none;
-        border-radius: 0.8rem;
-        font-size: 1rem;
-        margin: 0.5rem;
-        font-size: 1rem;
-        font-family: "iransans-reg";
-        cursor: pointer;
-
-        img {
-          margin-bottom: -0.3rem;
-          margin-left: 0.3rem;
-        }
-      }
-
-      .login-btn {
-        background: transparent;
-        border: 1px solid $black;
-        color: $neutral-gray-8;
-      }
+      align-items: center;
+      background-color: $primary;
+      color: $white;
+      border: none;
+      outline: none;
+      margin: 0 0.5rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
     }
   }
 
-  .links {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    font-family: "iransans-bold";
-    font-size: 0.9rem;
-
-    a {
-      color: $neutral-gray-8;
-    }
+  .nav-search-md {
+    font-family: "iransans-reg";
   }
 }
 
@@ -281,5 +209,220 @@ main {
         width: 15rem;
       }
     }
+  }
+}
+
+/* resposive design */
+
+@media screen and (min-width: 300px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 35%;
+    align-items: center;
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+
+      .hamburger-icon {
+        background-color: $neutral-gray-1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 0.4rem;
+        border-radius: 0.4rem;
+
+        img {
+          width: 80%;
+        }
+      }
+
+      img {
+        width: 70%;
+        height: 70%;
+      }
+
+      .nav-search {
+        width: 100%;
+        position: relative;
+        input {
+          width: 100%;
+          color: $neutral-gray-5;
+        }
+      }
+    }
+
+    .nav-buttons {
+      display: flex;
+
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 0.7rem 0.8rem;
+
+        span {
+          display: none;
+        }
+      }
+
+      button:nth-child(2) {
+        background-color: transparent;
+        border: 1px solid $neutral-gray-3;
+        color: $neutral-gray-8;
+      }
+    }
+
+    .nav-search {
+      display: none;
+    }
+  }
+
+  .nav-search-md {
+    width: 100%;
+    position: relative;
+
+    input {
+      width: 100%;
+      background: $neutral-gray-1;
+      color: $neutral-gray-5;
+      border: none;
+      outline: none;
+      padding: 1rem 3rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  .nav-search-md::before {
+    content: url(../images/nav/search.png);
+    position: absolute;
+    top: 30%;
+    right: 4%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .preview-sm,
+  .preview-landscape {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .container {
+    width: 540px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+
+  nav {
+    grid-template-columns: 1fr 40%;
+
+    .nav-buttons {
+      button {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+
+    .nav-items {
+      a {
+        color: $neutral-gray-8;
+      }
+    }
+  }
+
+  .nav-search-md {
+    display: none;
+  }
+
+  nav {
+    .nav-logo {
+      .hamburger-icon {
+        display: none;
+      }
+
+      img {
+        width: 30%;
+      }
+
+      .nav-search {
+        width: 100%;
+        position: relative;
+        display: flex;
+
+        input {
+          width: 85%;
+          background: $neutral-gray-1;
+          color: $neutral-gray-5;
+          border: none;
+          outline: none;
+          padding: 0.7rem 2.3rem;
+          border-radius: 0.5rem;
+        }
+      }
+
+      .nav-search::before {
+        content: url(../images/nav/search.png);
+        // content: "*";
+        width: 5rem;
+        position: absolute;
+        top: 30%;
+        right: 3%;
+      }
+    }
+
+    .nav-buttons {
+      justify-content: flex-end;
+      button {
+        gap: 0.5rem;
+        span {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+
+  nav {
+    .nav-buttons {
+      button {
+        width: 35%;
+      }
+    }
+  }
+
+  .preview-sm,
+  .preview-landscape {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
   }
 }

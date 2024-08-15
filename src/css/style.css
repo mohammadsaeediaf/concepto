@@ -18,9 +18,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
   font-family: "iransans-reg";
 }
 
@@ -45,86 +42,22 @@ body {
   margin-left: auto;
 }
 
-header {
-  width: 100%;
-  padding: 1rem 3rem;
+nav {
+  padding: 1rem 0;
 }
-header nav {
-  display: grid;
+nav .nav-buttons button {
+  display: flex;
   align-items: center;
-  grid-template-columns: 1fr 30%;
-}
-header nav .nav-logo {
-  margin-bottom: -0.5rem;
-  height: 10%;
-}
-header nav .serach {
-  position: relative;
-}
-header nav .serach input {
-  padding: 0.8rem 2.7rem;
-  border-radius: 0.7rem;
-  margin-right: 1.5rem;
-  outline: none;
-  border: none;
-  background: #e9eaee;
-  position: relative;
-  font-family: "iransans-reg";
-}
-header nav .serach .serach-icon {
-  position: absolute;
-  top: 0.8rem;
-  right: 15.3rem;
-}
-header nav .serach .search-content {
-  display: flex;
-  position: relative;
-}
-header nav .serach .search-btn {
-  width: 100%;
-}
-header nav .search-btn::before {
-  content: url(../images/nav/search.png);
-  position: absolute;
-  right: 29%;
-  top: 30%;
-  z-index: 10;
-}
-header nav .buttons {
-  display: flex;
-}
-header nav .buttons button {
-  display: flex;
-  padding: 0.6rem 1rem;
   background-color: #438efd;
   color: #fff;
   border: none;
   outline: none;
-  border-radius: 0.8rem;
-  font-size: 1rem;
-  margin: 0.5rem;
-  font-size: 1rem;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+nav .nav-search-md {
   font-family: "iransans-reg";
-  cursor: pointer;
-}
-header nav .buttons button img {
-  margin-bottom: -0.3rem;
-  margin-left: 0.3rem;
-}
-header nav .buttons .login-btn {
-  background: transparent;
-  border: 1px solid #0f0f0f;
-  color: #2e303b;
-}
-header .links {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  font-family: "iransans-bold";
-  font-size: 0.9rem;
-}
-header .links a {
-  color: #2e303b;
 }
 
 main .hero {
@@ -218,4 +151,174 @@ main .information .info-item .info {
   top: 20%;
   right: 14%;
   width: 15rem;
+}
+
+/* resposive design */
+@media screen and (min-width: 300px) {
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 35%;
+    align-items: center;
+  }
+  nav .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  nav .nav-logo .hamburger-icon {
+    background-color: #e9eaee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.4rem;
+    border-radius: 0.4rem;
+  }
+  nav .nav-logo .hamburger-icon img {
+    width: 80%;
+  }
+  nav .nav-logo img {
+    width: 70%;
+    height: 70%;
+  }
+  nav .nav-logo .nav-search {
+    width: 100%;
+    position: relative;
+  }
+  nav .nav-logo .nav-search input {
+    width: 100%;
+    color: #737993;
+  }
+  nav .nav-buttons {
+    display: flex;
+  }
+  nav .nav-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0.7rem 0.8rem;
+  }
+  nav .nav-buttons button span {
+    display: none;
+  }
+  nav .nav-buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #aeb2c0;
+    color: #2e303b;
+  }
+  nav .nav-search {
+    display: none;
+  }
+  .nav-search-md {
+    width: 100%;
+    position: relative;
+  }
+  .nav-search-md input {
+    width: 100%;
+    background: #e9eaee;
+    color: #737993;
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+  }
+  .nav-search-md::before {
+    content: url(../images/nav/search.png);
+    position: absolute;
+    top: 30%;
+    right: 4%;
+  }
+  .nav-links {
+    display: none;
+  }
+  .preview-sm,
+  .preview-landscape {
+    display: none;
+  }
+}
+@media screen and (min-width: 576px) {
+  .container {
+    width: 540px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+  nav {
+    grid-template-columns: 1fr 40%;
+  }
+  nav .nav-buttons button {
+    font-size: 0.7rem;
+  }
+  .nav-links {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+  }
+  .nav-links .nav-items a {
+    color: #2e303b;
+  }
+  .nav-search-md {
+    display: none;
+  }
+  nav .nav-logo .hamburger-icon {
+    display: none;
+  }
+  nav .nav-logo img {
+    width: 30%;
+  }
+  nav .nav-logo .nav-search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  nav .nav-logo .nav-search input {
+    width: 85%;
+    background: #e9eaee;
+    color: #737993;
+    border: none;
+    outline: none;
+    padding: 0.7rem 2.3rem;
+    border-radius: 0.5rem;
+  }
+  nav .nav-logo .nav-search::before {
+    content: url(../images/nav/search.png);
+    width: 5rem;
+    position: absolute;
+    top: 30%;
+    right: 3%;
+  }
+  nav .nav-buttons {
+    justify-content: flex-end;
+  }
+  nav .nav-buttons button {
+    gap: 0.5rem;
+  }
+  nav .nav-buttons button span {
+    display: flex;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  nav .nav-buttons button {
+    width: 35%;
+  }
+  .preview-sm,
+  .preview-landscape {
+    display: block;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }/*# sourceMappingURL=style.css.map */

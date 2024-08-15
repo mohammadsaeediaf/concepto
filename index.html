@@ -4,54 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="src/css/resposive.scss" />
     <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/css/resposive.css" />
   </head>
   <body>
     <!--================= Header===================== -->
     <header>
       <div class="container">
         <nav>
-          <div class="serach">
-            <div class="search-content">
-              <img src="src/images/nav/logo.png" alt="Logo" class="nav-logo" />
-              <div class="search-btn">
-                <input
-                  type="text"
-                  placeholder="جستجو کسب و کار"
-                  class="search-input"
-                />
-              </div>
-              <!-- <img src="src/images/nav/search.png" class="serach-icon" /> -->
+          <div class="nav-logo">
+            <div class="hamburger-icon">
+              <img src="./src/images/nav/hamburger-icon.png" alt="menu" />
+            </div>
+            <img src="./src/images/nav/logo.png" alt="logo" />
+
+            <div class="nav-search">
+              <input type="text" placeholder="جست و جو کسب و کار" />
             </div>
           </div>
-          <div class="buttons">
+
+          <div class="nav-buttons">
             <button>
-              <img src="src/images/nav/thunder.png" />
+              <img src="./src/images/nav/thunder.png" alt="thunder" />
               <span>رایگان شروع کن!</span>
             </button>
-            <button class="login-btn">
-              <img src="src/images/nav/login.png" />
+
+            <button class="nav-login">
+              <img src="./src/images/nav/login.png" alt="login" />
               <span>ورود / ثبت نام</span>
             </button>
           </div>
         </nav>
 
-        <ul class="links">
-          <li><a href="#">شرکت ها</a></li>
-          <li><a href="#">فرصت های شغلی</a></li>
-          <li><a href="#">اخبار و رویداد ها</a></li>
-          <li><a href="#">درباره ما</a></li>
-          <li><a href="#">تماس با ما</a></li>
+        <ul class="nav-links">
+          <li class="nav-items"><a href="#">شرکت ها</a></li>
+          <li class="nav-items"><a href="#">فرصت های شغلی</a></li>
+          <li class="nav-items"><a href="#">اخبار و رویداد ها</a></li>
+          <li class="nav-items"><a href="#">درباره ما</a></li>
+          <li class="nav-items"><a href="#">تماس با ما</a></li>
         </ul>
+
+        <div class="nav-search-md">
+          <input type="text" placeholder="جست و جو کسب و کار" />
+        </div>
       </div>
     </header>
     <!--================= /Header===================== -->
 
     <!--================= /Main===================== -->
-    <main>
+
+    <!-- Hero Section -->
+
+    <!--/Hero Section -->
+
+    <!-- Information section -->
+
+    <!-- <main>
       <div class="container">
-        <!-- Hero Section -->
         <section class="hero">
           <div class="hero-caption">
             <h1>با سرچ کمتر نتیجه بهتر بگیر</h1>
@@ -91,9 +100,7 @@
             </div>
           </div>
         </section>
-        <!--/Hero Section -->
-
-        <!-- Information section -->
+       
 
         <section class="information">
           <div class="info-item">
@@ -121,7 +128,7 @@
           </div>
         </section>
       </div>
-    </main>
+    </main> -->
 
     <!--================= /Main===================== -->
   </body>
