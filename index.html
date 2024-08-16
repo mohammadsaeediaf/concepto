@@ -3,55 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Concepto</title>
+    <link rel="stylesheet" href="src/css/resposive.scss" />
     <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/css/resposive.css" />
-  </head>
   <body>
     <!--================= Header===================== -->
     <header>
       <div class="container">
         <nav>
-          <div class="serach">
-            <div class="search-content">
-              <img src="src/images/nav/logo.png" alt="Logo" class="nav-logo" />
-              <div class="search-btn">
-                <input
-                  type="text"
-                  placeholder="جستجو کسب و کار"
-                  class="search-input"
-                />
-              </div>
-              <!-- <img src="src/images/nav/search.png" class="serach-icon" /> -->
+          <div class="nav-logo">
+            <div class="hamburger-icon">
+              <img src="./src/images/nav/hamburger-icon.png" alt="menu" />
+            </div>
+            <img src="./src/images/nav/logo.png" alt="logo" />
+
+            <div class="nav-search">
+              <input type="text" placeholder="جست و جو کسب و کار" />
             </div>
           </div>
-          <div class="buttons">
+
+          <div class="nav-buttons">
             <button>
-              <img src="src/images/nav/thunder.png" />
+              <img src="./src/images/nav/thunder.png" alt="thunder" />
               <span>رایگان شروع کن!</span>
             </button>
-            <button class="login-btn">
-              <img src="src/images/nav/login.png" />
+
+            <button class="nav-login">
+              <img src="./src/images/nav/login.png" alt="login" />
               <span>ورود / ثبت نام</span>
             </button>
           </div>
         </nav>
 
-        <ul class="links">
-          <li><a href="#">شرکت ها</a></li>
-          <li><a href="#">فرصت های شغلی</a></li>
-          <li><a href="#">اخبار و رویداد ها</a></li>
-          <li><a href="#">درباره ما</a></li>
-          <li><a href="#">تماس با ما</a></li>
+        <ul class="nav-links">
+          <li class="nav-items"><a href="#">شرکت ها</a></li>
+          <li class="nav-items"><a href="#">فرصت های شغلی</a></li>
+          <li class="nav-items"><a href="#">اخبار و رویداد ها</a></li>
+          <li class="nav-items"><a href="#">درباره ما</a></li>
+          <li class="nav-items"><a href="#">تماس با ما</a></li>
         </ul>
+
+        <div class="nav-search-md">
+          <input type="text" placeholder="جست و جو کسب و کار" />
+        </div>
       </div>
     </header>
-    <!--================= /Header===================== -->
 
-    <!--================= /Main===================== -->
+    <!--================= Main===================== -->
+
     <main>
       <div class="container">
-        <!-- Hero Section -->
+        <!--Hero Section -->
         <section class="hero">
           <div class="hero-caption">
             <h1>با سرچ کمتر نتیجه بهتر بگیر</h1>
@@ -68,7 +70,15 @@
             </div>
           </div>
 
+          <!-- Hero Section -->
+
           <div class="hero-preview">
+            <div class="preview-about">
+              <img
+                src="./src/images/main/hero-section/preview-about.png"
+                alt="about"
+              />
+            </div>
             <div class="preview">
               <img
                 src="src/images/main/hero-section/preview.png"
@@ -91,38 +101,203 @@
             </div>
           </div>
         </section>
-        <!--/Hero Section -->
 
         <!-- Information section -->
-
         <section class="information">
-          <div class="info-item">
-            <div class="circle"></div>
-            <div class="info">
-              <p class="num">۱۱۲,۶۱۰+</p>
-              <p>شرکت فعال</p>
-            </div>
+          <div class="info">
+            <p class="info-num">۱۱۲,۶۱۰+</p>
+            <p class="info-caption">شرکت فعال</p>
           </div>
 
-          <div class="info-item">
-            <div class="circle"></div>
-            <div class="info">
-              <p class="num">۱۱+</p>
-              <p>میلیارد تومان سرمایه گذاری</p>
-            </div>
+          <div class="info">
+            <p class="info-num">۱۱+</p>
+            <p class="info-caption">میلیارد تومان سرمایه گذاری</p>
           </div>
 
-          <div class="info-item">
-            <div class="circle"></div>
-            <div class="info">
-              <p class="num">۴۹۶+</p>
-              <p>سرمایه گذار</p>
+          <div class="info">
+            <p class="info-num">۴۹۶+</p>
+            <p class="info-caption">سرمایه گذار</p>
+          </div>
+        </section>
+
+        <!-- Business cards -->
+        <section class="business">
+          <div class="business-card">
+            <img
+              src="./src/images/main/favorite-company.png"
+              alt="favorite-company"
+            />
+            <div class="square"></div>
+            <p class="business-caption">شرکت مورد علاقت رو پیدا کن</p>
+          </div>
+
+          <div class="business-card">
+            <img src="./src/images/main/business.png" alt="favorite-company" />
+            <div class="square"></div>
+            <p class="business-caption">کسب و کارهای مناسب رو پیدا کن</p>
+          </div>
+
+          <div class="business-card">
+            <img
+              src="./src/images/main/favorite-company.png"
+              alt="favorite-company"
+            />
+            <div class="square"></div>
+            <p class="business-caption">با کسب و کارها ارتباط بگیر</p>
+          </div>
+        </section>
+
+        <!-- catogory -->
+
+        <section class="category">
+          <div class="container">
+            <div class="category-title">
+              <h4>دسته بندی ها</h4>
+              <img src="./src/images/main/category/chevron-left.png" alt="" />
+            </div>
+            <div class="category-section">
+              <div class="category-item">
+                <div class="circle">
+                  <img src="./src/images/main/category/ai.png" alt="AI" />
+                </div>
+                <p>هوش مصنوعی</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/programing.png"
+                    alt="programing.png"
+                  />
+                </div>
+                <p>برنامه نویسی</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/digital-currency.png"
+                    alt="digital-currency.png"
+                  />
+                </div>
+                <p>ارز دیجیتال</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/accounting.png"
+                    alt="accounting.png"
+                  />
+                </div>
+                <p>حسابداری</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/graphic.png"
+                    alt="graphic.png"
+                  />
+                </div>
+                <p>گرافیک</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img src="./src/images/main/category/media.png"
+                  alt=/media.png" />
+                </div>
+                <p>رسانه ها</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img src="./src/images/main/category/aerospace.png"
+                  alt=/aerospace.png" />
+                </div>
+                <p>هوافضا</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="category">
+          <div class="container">
+            <div class="category-section">
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/medicine.png"
+                    alt="medicine.png"
+                  />
+                </div>
+                <p>پزشکی</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/business-img.png"
+                    alt="business"
+                  />
+                </div>
+                <p>تجارت الکترونیک</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/scientific.png"
+                    alt="scientific.png"
+                  />
+                </div>
+                <p>علمی</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/music.png"
+                    alt="music.png"
+                  />
+                </div>
+                <p>موسیقی</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/Biotechnology.png"
+                    alt="Biotechnology.png"
+                  />
+                </div>
+                <p>بیوتکنولوژی</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/cinema.png"
+                    alt="cinema"
+                  />
+                </div>
+                <p>رسانه ها</p>
+              </div>
+
+              <div class="category-item">
+                <div class="circle">
+                  <img
+                    src="./src/images/main/category/Transportation.png"
+                    alt="Transportation.png"
+                  />
+                </div>
+                <p>حمل و نقل</p>
+              </div>
             </div>
           </div>
         </section>
       </div>
     </main>
-
-    <!--================= /Main===================== -->
   </body>
 </html>

@@ -18,9 +18,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
   font-family: "iransans-reg";
 }
 
@@ -36,6 +33,7 @@ body {
   background: #f8f8f8;
   direction: rtl;
   font-family: "iransans-reg";
+  overflow-x: hidden;
 }
 
 .container {
@@ -45,86 +43,23 @@ body {
   margin-left: auto;
 }
 
-header {
-  width: 100%;
-  padding: 1rem 3rem;
+nav {
+  padding: 1rem 0;
 }
-header nav {
-  display: grid;
+nav .nav-buttons button {
+  display: flex;
   align-items: center;
-  grid-template-columns: 1fr 30%;
-}
-header nav .nav-logo {
-  margin-bottom: -0.5rem;
-  height: 10%;
-}
-header nav .serach {
-  position: relative;
-}
-header nav .serach input {
-  padding: 0.8rem 2.7rem;
-  border-radius: 0.7rem;
-  margin-right: 1.5rem;
-  outline: none;
-  border: none;
-  background: #e9eaee;
-  position: relative;
-  font-family: "iransans-reg";
-}
-header nav .serach .serach-icon {
-  position: absolute;
-  top: 0.8rem;
-  right: 15.3rem;
-}
-header nav .serach .search-content {
-  display: flex;
-  position: relative;
-}
-header nav .serach .search-btn {
-  width: 100%;
-}
-header nav .search-btn::before {
-  content: url(../images/nav/search.png);
-  position: absolute;
-  right: 29%;
-  top: 30%;
-  z-index: 10;
-}
-header nav .buttons {
-  display: flex;
-}
-header nav .buttons button {
-  display: flex;
-  padding: 0.6rem 1rem;
   background-color: #438efd;
   color: #fff;
   border: none;
   outline: none;
-  border-radius: 0.8rem;
-  font-size: 1rem;
-  margin: 0.5rem;
-  font-size: 1rem;
-  font-family: "iransans-reg";
+  margin: 0 0.5rem;
+  padding: 1rem;
   cursor: pointer;
+  border-radius: 0.5rem;
 }
-header nav .buttons button img {
-  margin-bottom: -0.3rem;
-  margin-left: 0.3rem;
-}
-header nav .buttons .login-btn {
-  background: transparent;
-  border: 1px solid #0f0f0f;
-  color: #2e303b;
-}
-header .links {
-  display: flex;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  font-family: "iransans-bold";
-  font-size: 0.9rem;
-}
-header .links a {
-  color: #2e303b;
+nav .nav-search-md {
+  font-family: "iransans-reg";
 }
 
 main .hero {
@@ -139,23 +74,12 @@ main .hero .hero-caption {
 }
 main .hero .hero-caption h1 {
   font-family: "iransans-bold";
-  font-size: 3.5rem;
   color: #00183b;
 }
 main .hero .hero-caption p {
   color: #013075;
 }
 main .hero .hero-caption .buttons button {
-  padding: 0.8rem 2rem;
-  background-color: #438efd;
-  color: #fff;
-  border: none;
-  outline: none;
-  border-radius: 0.8rem;
-  font-size: 1rem;
-  margin: 0.5rem;
-  font-size: 1rem;
-  font-family: "iransans-reg";
   cursor: pointer;
 }
 main .hero .hero-caption .buttons button img {
@@ -173,15 +97,10 @@ main .hero .hero-caption .buttons .about-btn img {
 main .hero .hero-preview {
   margin-top: 3rem;
   position: relative;
-  margin-bottom: 15rem;
+  margin-bottom: 5rem;
 }
 main .hero .hero-preview img {
-  width: 100%;
-}
-main .hero .hero-preview .preview-sm {
-  position: absolute;
-  right: 0;
-  top: -15%;
+  width: 70%;
 }
 main .hero .hero-preview .preview-landscape {
   position: absolute;
@@ -189,33 +108,369 @@ main .hero .hero-preview .preview-landscape {
   bottom: -27%;
 }
 main .information {
+  display: grid;
+  gap: 4rem 0;
   margin: 10rem 0;
-  display: flex;
-  flex-wrap: wrap;
 }
-main .information .info-item {
-  display: flex;
-  gap: 1rem;
+main .information .info {
   position: relative;
-  width: 33%;
-}
-main .information .info-item .circle {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  background: #ffecb3;
-}
-main .information .info-item .num {
-  font-family: "iransans-med";
-  font-size: 2rem;
-}
-main .information .info-item .info {
-  font-family: "iransans-bold";
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-right: 2rem;
+}
+main .information .info::before {
+  content: "";
+  width: 5rem;
+  height: 5rem;
+  background: #ffecb3;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+main .information .info-num {
+  margin-right: 3rem;
+  font-family: "iransans-med";
+  font-size: 2rem;
+}
+main .information .info-caption {
+  font-family: "iransans-bold";
+}
+main .business {
+  display: grid;
+  text-align: center;
+  margin: 5rem 0;
+  gap: 3rem;
+}
+main .business .business-card {
+  width: 100%;
+  position: relative;
+}
+main .business .business-card .square {
+  width: 100%;
+  height: 30%;
+  background: #aecffe;
   position: absolute;
   top: 20%;
-  right: 14%;
-  width: 15rem;
+  z-index: -1;
+  padding: 2.9rem 0;
+  border-radius: 1rem;
+}
+main .business .business-card .business-caption {
+  font-family: "iransans-bold";
+  margin-top: 1rem;
+}
+main .business .business-card:nth-child(2) .square {
+  background: #438efd;
+}
+main .business .business-card:nth-child(3) .square {
+  background: #287efd;
+}
+main .category {
+  margin: 3rem 0;
+}
+main .category .category-section {
+  display: flex;
+  text-align: center;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+main .category .category-section::-webkit-scrollbar {
+  display: none;
+}
+main .category .category-title {
+  position: relative;
+  margin: 3rem h4;
+  margin-font-family: "iransans-bold";
+  margin-color: #444859;
+  margin-margin: 1rem 0;
+  margin-position: relative;
+}
+main .category .category-title h4::after {
+  content: "";
+  height: 2px;
+  display: inline-block;
+  background: #aeb2c0;
+  position: absolute;
+  margin-right: 1rem;
+  margin-top: 0.6rem;
+}
+main .category .category-title img {
+  position: absolute;
+  top: -10%;
+  left: -3%;
+}
+main .category .category-item .circle {
+  margin-bottom: 1rem;
+  border: 2px solid #438efd;
+  padding: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* resposive design */
+@media screen and (min-width: 300px) {
+  .category h4::after {
+    width: 60%;
+  }
+  .category .category-section {
+    gap: 2rem;
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 35%;
+    align-items: center;
+  }
+  nav .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  nav .nav-logo .hamburger-icon {
+    background-color: #e9eaee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.4rem;
+    border-radius: 0.4rem;
+  }
+  nav .nav-logo .hamburger-icon img {
+    width: 80%;
+  }
+  nav .nav-logo img {
+    width: 70%;
+    height: 70%;
+  }
+  nav .nav-logo .nav-search {
+    width: 100%;
+    position: relative;
+  }
+  nav .nav-logo .nav-search input {
+    width: 100%;
+    color: #737993;
+  }
+  nav .nav-buttons {
+    display: flex;
+  }
+  nav .nav-buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 0.7rem 0.8rem;
+  }
+  nav .nav-buttons button span {
+    display: none;
+  }
+  nav .nav-buttons button:nth-child(2) {
+    background-color: transparent;
+    border: 1px solid #aeb2c0;
+    color: #2e303b;
+  }
+  nav .nav-search {
+    display: none;
+  }
+  .nav-search-md {
+    width: 100%;
+    position: relative;
+  }
+  .nav-search-md input {
+    width: 100%;
+    background: #e9eaee;
+    color: #737993;
+    border: none;
+    outline: none;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+  }
+  .nav-search-md .nav-search-md::before {
+    content: url(../images/nav/search.png);
+    position: absolute;
+    top: 30%;
+    right: 4%;
+  }
+  .nav-links {
+    display: none;
+  }
+  main .hero .hero-caption h1 {
+    font-size: 1.5rem;
+  }
+  main .hero .hero-caption .buttons {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  main .hero .hero-caption .buttons button {
+    display: flex;
+    align-items: center;
+    background-color: #438efd;
+    color: #fff;
+    border: none;
+    outline: none;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+  }
+  .hero .preview-about {
+    padding: 0 2rem;
+  }
+  .preview,
+  .preview-sm,
+  .preview-landscape {
+    display: none;
+  }
+}
+@media screen and (min-width: 576px) {
+  .category h4::after {
+    width: 70%;
+  }
+  .container {
+    width: 540px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 768px) {
+  .category h4::after {
+    width: 80%;
+  }
+  .container {
+    width: 750px;
+  }
+  .nav-links {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+  }
+  .nav-links .nav-items a {
+    color: #2e303b;
+  }
+  .nav-search-md {
+    display: none;
+  }
+  nav {
+    grid-template-columns: 1fr 40%;
+  }
+  nav .nav-buttons button {
+    font-size: 0.7rem;
+  }
+  nav .nav-logo .hamburger-icon {
+    display: none;
+  }
+  nav .nav-logo img {
+    width: 30%;
+  }
+  nav .nav-logo .nav-search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  nav .nav-logo .nav-search input {
+    width: 85%;
+    background: #e9eaee;
+    color: #737993;
+    border: none;
+    outline: none;
+    padding: 0.7rem 2.3rem;
+    border-radius: 0.5rem;
+  }
+  nav .nav-logo .nav-search::before {
+    content: url(../images/nav/search.png);
+    width: 5rem;
+    position: absolute;
+    top: 30%;
+    right: 3%;
+  }
+  nav .nav-buttons {
+    justify-content: flex-end;
+  }
+  nav .nav-buttons button {
+    gap: 0.5rem;
+  }
+  nav .nav-buttons button span {
+    display: flex;
+  }
+  main .hero .hero-caption h1 {
+    font-size: 2.5rem;
+  }
+  main .hero .preview-about img {
+    width: 50%;
+  }
+  main .business .business-card .square {
+    padding: 5rem 0;
+  }
+  main .business .business-card img {
+    width: 40%;
+  }
+}
+@media (min-width: 992px) {
+  .category h4::after {
+    width: 90%;
+  }
+  .category .category-title img {
+    display: none;
+  }
+  .category .category-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+  }
+  .container {
+    width: 970px;
+  }
+  nav .nav-buttons button {
+    width: 35%;
+  }
+  main .preview-sm {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -15%;
+  }
+  main .preview-about {
+    display: none;
+  }
+  main .preview,
+  main .preview-landscape {
+    display: block;
+  }
+  main .hero .hero-caption h1 {
+    font-size: 3.5rem;
+  }
+  main .hero .preview-about img {
+    width: 70%;
+  }
+  main .information {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .business {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main .business .business-card .square {
+    padding: 3.3rem 0;
+  }
+  main .business .business-card img {
+    width: 70%;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  nav .nav-buttons button {
+    font-size: 1rem;
+  }
+  .business .business-card .square {
+    padding: 4.8rem 0 !important;
+  }
+  .business .business-card img {
+    width: 79.5% !important;
+  }
 }/*# sourceMappingURL=style.css.map */
